@@ -29,3 +29,21 @@ python simple_rag.py
 
 - If you encounter errors, ensure all dependencies are installed.
 - Check the script for typos or syntax errors.
+
+# Compare: Retrieval-Only vs RAG
+
+## Purpose
+Benchmark baseline RAG performance by comparing retrieved chunks against LLM-generated answers.
+
+## What It Does
+1. Loads a document and splits into chunks
+2. Builds TF-IDF vector store (keyword-based retrieval)
+3. For each query:
+   - Retrieves top-3 relevant chunks
+   - Shows retrieved chunks
+   - Generates answer using Ollama (Mistral)
+   - Returns both for comparison
+
+## Usage
+```bash
+python compare_with_llm.py
