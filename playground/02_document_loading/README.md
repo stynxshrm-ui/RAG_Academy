@@ -43,11 +43,8 @@ Give four reasons that can cause interruption of an ice dance?
 
 ANSWER:
  1. Interruptions can occur due to the skaters themselves falling or experiencing a fall (one point for one partner and two points if both partners fall).
-
 2. Interruptions can also happen due to an interruption lasting between 10 seconds and less than 20 seconds, for which ice dancers can lose one point.
-
 3. An interruption can occur if it lasts between 20 and 30 seconds, resulting in a loss of two points for the ice dance team.
-
 4. Adverse conditions such as lighting issues, ice conditions, or items thrown onto the ice can cause an interruption in the performance. In such cases, skaters may stop their routine until the problem is resolved. Additionally, if an adverse condition lasts over ten minutes, a second warm-up takes place before continuing the competition.
 
 ---
