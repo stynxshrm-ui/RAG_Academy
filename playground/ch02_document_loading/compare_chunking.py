@@ -3,11 +3,10 @@ compare_chunking_with_llm.py
 Test chunking strategies by generating actual RAG responses
 """
 
-import sys
 import os
-sys.path.append('../01_simple_rag')
+# sys.path.append('../01_simple_rag')
 
-from simple_rag import SimpleEmbeddings, VectorStore, chunk_documents, cosine_similarity
+from ch01_simple_rag.simple_rag import SimpleEmbeddings, VectorStore, cosine_similarity
 import ollama
 from typing import List
 import re
