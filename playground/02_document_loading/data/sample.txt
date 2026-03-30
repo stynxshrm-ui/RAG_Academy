@@ -1,0 +1,7 @@
+
+Python is a programming language created by Guido van Rossum. It is great for data science.
+Data science uses Python for analysis and machine learning. Pandas is a key library.
+Machine learning helps computers learn from data. Neural networks are part of ML.
+Python also works for web development with Django and Flask.
+Data visualization uses matplotlib and seaborn in Python.
+RAG systems combine retrieval and generation for better AI answers.

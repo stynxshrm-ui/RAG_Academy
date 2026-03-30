@@ -87,7 +87,7 @@ def main():
     # Test queries
     test_queries = [
         "What is the main topic?",
-        "What are the key points?",
+        #"What are the key points?",
         # Add your own questions
     ]
     
