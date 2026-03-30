@@ -163,8 +163,8 @@ print(f"   Created {len(chunks)} chunks")
 for i, chunk in enumerate(chunks, 1):
     print(f"   Chunk {i}: {chunk[:80]}...")
 
-# Step 4: Create embeddings (REAL semantic embeddings!)
-print("\n STEP 4: Creating embeddings (TF-IDF - captures meaning)")
+# Step 4: Create embeddings 
+print("\n STEP 4: Creating embeddings (TF-IDF)")
 embedder = SimpleEmbeddings()
 embedder.build_vocabulary(chunks)
 
@@ -202,6 +202,12 @@ for query in test_queries:
     for i, (chunk, score) in enumerate(results, 1):
         print(f"   {i}. Score: {score:.4f} - {chunk[:80]}...")
 
+# ============================================================================
+# UNDERSTANDING THE MATH
+# ============================================================================
+print("=" * 70)
+print("UNDERSTANDING THE MATH")
+print("=" * 70)
 
 print("\nCompare two similar sentences:")
 sentence1 = "Python is great for data science"
@@ -212,7 +218,7 @@ print(f"\nSentence 1: {sentence1}")
 print(f"Sentence 2: {sentence2}")
 print(f"Sentence 3: {sentence3}")
 
-print("\n Using TF-IDF Embeddings (semantic):")
+print("\n Using TF-IDF Embeddings:")
 embedder_simple = SimpleEmbeddings()
 embedder_simple.build_vocabulary([sentence1, sentence2, sentence3])
 emb1 = embedder_simple.embed(sentence1)
@@ -227,9 +233,6 @@ print(f"   Similarity(sentence1, sentence3) = {sim13:.4f}")
 print("   → Similar sentences get HIGH similarity scores!")
 print("   → Can find semantically related content!")
 
-# ============================================================================
-# UNDERSTANDING THE MATH
-# ============================================================================
 print("\n" + "=" * 70)
 print(" UNDERSTANDING WHAT EMBEDDINGS DO")
 print("=" * 70)

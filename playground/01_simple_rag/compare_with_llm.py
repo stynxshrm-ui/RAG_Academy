@@ -70,7 +70,7 @@ def main():
     
     # Chunk
     chunks = chunk_documents(text, chunk_size=30, overlap=10)
-    print(f"================Number of chunks: {len(chunks)}")
+    print(f"Number of chunks: {len(chunks)}")
     
     # Build vector store
     embedding_model = SimpleEmbeddings()
