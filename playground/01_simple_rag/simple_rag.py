@@ -44,7 +44,7 @@ def chunk_documents(text: str, chunk_size: int = 200, overlap: int = 50) -> List
 # ============================================================================
 class SimpleEmbeddings:
     """
-    A simplified but SEMANTIC embedding method using TF-IDF.
+    A simplified keyword-based embedding method using TF-IDF.
     This is simpler than neural networks but still captures meaning.
     """
     
