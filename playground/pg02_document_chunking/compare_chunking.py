@@ -6,7 +6,7 @@ Test chunking strategies by generating actual RAG responses
 import os
 # sys.path.append('../01_simple_rag')
 
-from ch01_simple_rag.simple_rag import SimpleEmbeddings, VectorStore, cosine_similarity
+from pg01_simple_rag.simple_rag import SimpleEmbeddings, VectorStore, cosine_similarity
 import ollama
 from typing import List
 import re
