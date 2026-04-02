@@ -1,3 +1,31 @@
 week*.md
 solns*/*
 data*/*
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+chroma_db/
+outputs/
+*.txt
+!requirements.txt
+*.pdf
+!sample.pdf
+*.png
+
+# OS
+.DS_Store
+Thumbs.db
