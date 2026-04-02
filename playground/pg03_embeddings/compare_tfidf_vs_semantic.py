@@ -3,11 +3,10 @@ Compare retrieval quality: TF-IDF vs Semantic embeddings
 """
 import sys
 
-
-from .simple_rag import SimpleEmbeddings, VectorStore as TFIDFStore
 from pg02_document_chunking.web_loader import load_web
-from pg03_embeddings.semantic_embeddings import SemanticEmbeddings
-from pg03_embeddings.chromadb_store import ChromaVectorStore
+from .simple_rag import SimpleEmbeddings, VectorStore as TFIDFStore
+from .semantic_embeddings import SemanticEmbeddings
+from .chromadb_store import ChromaVectorStore
 import ollama
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
