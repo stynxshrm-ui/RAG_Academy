@@ -83,7 +83,7 @@ class HybridRetriever:
         return [{'chunk': self.chunks[idx], 'score': combined[idx]} for idx in top_indices]
 
 def main():
-    with open('../data/sample_document.txt', 'r') as f:
+    with open('data/sample_document.txt', 'r') as f:
         text = f.read()
     
     chunk_sizes = [200, 500]

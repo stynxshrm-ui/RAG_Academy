@@ -17,6 +17,10 @@ build/
 *.swp
 *.swo
 
+# Project specific - ignore all __pycache__ in playground
+playground/**/__pycache__/
+**/__pycache__/
+
 # Project specific
 chroma_db/
 outputs/
