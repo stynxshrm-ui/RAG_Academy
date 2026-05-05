@@ -31,42 +31,50 @@ class ChromaVectorStore:
         )
         self.next_id = 0
     
-    def add(self, chunk: str, embedding: np.ndarray, metadata: Dict = None):
+    def add(self, chunk: str, embedding: np.ndarray | list, metadata: Dict = None):
         """Add a chunk with its embedding"""
         if metadata is None:
             metadata = {"index": self.next_id}  # Non-empty metadata
-        
+
+        embedding_list = embedding.tolist() if isinstance(embedding, np.ndarray) else embedding
         self.collection.add(
-            embeddings=[embedding.tolist()],
+            embeddings=[embedding_list],
             documents=[chunk],
             metadatas=[metadata],
             ids=[str(self.next_id)]
         )
         self.next_id += 1
     
-    def add_batch(self, chunks: List[str], embeddings: np.ndarray, metadatas: List[Dict] = None):
+    def add_batch(self, chunks: List[str], embeddings: np.ndarray | list, metadatas: List[Dict] = None):
         """Add multiple chunks at once"""
         ids = [str(i + self.next_id) for i in range(len(chunks))]
         
-        # Create default metadata if none provided
         if metadatas is None:
             metadatas = [{"index": i} for i in range(len(chunks))]
+
+        if isinstance(embeddings, np.ndarray):
+            embeddings_list = embeddings.tolist()
+        else:
+            embeddings_list = [e.tolist() if isinstance(e, np.ndarray) else e for e in embeddings]
         
         # Or use empty dict with a placeholder (Chroma requires at least one field)
         # metadatas = [{"source": "document"} for _ in range(len(chunks))]
         
         self.collection.add(
-            embeddings=embeddings.tolist(),
+            embeddings=embeddings_list,
             documents=chunks,
             metadatas=metadatas,
             ids=ids
         )
         self.next_id += len(chunks)
     
-    def search(self, query_embedding: np.ndarray, top_k: int = 3) -> List[Dict]:
+    def search(self, query_embedding: np.ndarray | list, top_k: int = 3) -> List[Dict]:
         """Search for similar chunks"""
+        if isinstance(query_embedding, np.ndarray):
+            query_embedding = query_embedding.tolist()
+
         results = self.collection.query(
-            query_embeddings=[query_embedding.tolist()],
+            query_embeddings=[query_embedding],
             n_results=top_k
         )
         
